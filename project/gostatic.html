@@ -1,0 +1,295 @@
+
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/svg+xml" href="images\thomux.svg">
+        <title>Gostatic - Thomux</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    </head>
+    <body>
+        
+        
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://thomux.eu">
+                    <img src="/images/thomux.svg" width="28" height="28">
+                    <span style="font-weight: bolder;">Thomux</span>
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    
+                        
+                            <a class="navbar-item " href="https://github.com/thomux">
+                                Github
+                            </a>
+                        
+                    
+                        
+                            <a class="navbar-item " href="/articles.html">
+                                Articles
+                            </a>
+                        
+                    
+                        
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link is-active" href="/projects.html">
+                                    Projects
+                                </a>
+
+                                <div class="navbar-dropdown">
+                                    
+                                        
+                                            <a class="navbar-item is-active" href="/project/gostatic.html">
+                                                Gostatic
+                                            </a>
+                                        
+                                    
+                                </div>
+                            </div>
+                        
+                    
+                        
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link " href="/pages.html">
+                                    More
+                                </a>
+
+                                <div class="navbar-dropdown">
+                                    
+                                        
+                                            <a class="navbar-item " href="/page/about.html">
+                                                About
+                                            </a>
+                                        
+                                    
+                                        
+                                            <a class="navbar-item " href="/page/contact.html">
+                                                Contact
+                                            </a>
+                                        
+                                    
+                                        
+                                            <a class="navbar-item " href="/pageMap.html">
+                                                Page Map
+                                            </a>
+                                        
+                                    
+                                        
+                                            <a class="navbar-item " href="/page/impressum.html">
+                                                Impressum
+                                            </a>
+                                        
+                                    
+                                        
+                                            <hr class="navbar-divider">
+                                        
+                                    
+                                        
+                                            <a class="navbar-item " href="https://github.com/thomux/thomux.github.io/issues">
+                                                Report an issue
+                                            </a>
+                                        
+                                    
+                                </div>
+                            </div>
+                        
+                    
+                </div>
+
+                <div class="navbar-end">
+                    <a class="navbar-item" href="https://thomux.eu">
+                        <img src="/images/thomux.svg" width="28" height="28">
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="section">
+            <div class="columns">
+                <div class="column is-3 is-hidden-mobile">
+                    
+    <aside class="menu">
+        
+            <p class="menu-label">
+                Thomux
+            </p>
+            
+                <ul class="menu-list">
+                
+                    <li><a class="" href="https://github.com/thomux/thomux.github.io/issues">Report an issue</a></li>
+                
+                </ul>
+            
+        
+            <p class="menu-label">
+                Articles
+            </p>
+            
+        
+            <p class="menu-label">
+                Projects
+            </p>
+            
+                <ul class="menu-list">
+                
+                    <li><a class="is-active" href="/project/gostatic.html">Gostatic</a></li>
+                
+                </ul>
+            
+        
+    </aside>
+
+                </div>
+                <div class="column is-6">
+                    
+    <div class="block">
+        <span class="tag is-primary">
+            <a href="#ZgotmplZ">GitHub</a>
+        </span>
+        
+            <span class="tag is-info">
+                go
+            </span>
+        
+            <span class="tag is-info">
+                web
+            </span>
+        
+            <span class="tag is-info">
+                blog
+            </span>
+        
+            <span class="tag is-info">
+                static_page
+            </span>
+        
+            <span class="tag is-info">
+                github_pages
+            </span>
+        
+    </div>
+    <div class="block">
+        <h1 class="title">
+            Gostatic
+        </h1>
+    </div>
+    <div class="block">
+        <p class="subtitle">
+            A simple static site generator written in go.
+        </p>
+    </div>
+
+    <div class="block">
+        <p>Gostatic is a simple static page generator supporting pages, articles and projects as content data<br />
+types.</p>
+<h2 id="content-data">Content data</h2>
+<p>The page content data is grouped by type into the folders <code>_articles</code>, <code>_pages</code> and <code>_projects</code>.</p>
+<p>All data is written as simple Markdown files, using a header started and ended with &lsquo;&mdash;&rsquo; to define<br />
+the required meta-data for the page. The Markdown content below the header is rendered using<br />
+<a href="https://github.com/yuin/goldmark">goldmark</a>. You can find the Markdown render code in<br />
+<code>gostatic/markdown.go</code>.</p>
+<h3 id="pages">Pages</h3>
+<p>Pages are classic HTML pages using the global site menus and layout. You can use this type e.g. for<br />
+your about page.</p>
+<p>A page requires the meta-data &lsquo;title&rsquo; and &lsquo;subtitle&rsquo;.</p>
+<p>You can find an example page in <code>test_data/_pages/page.md</code>.</p>
+<h3 id="projects">Projects</h3>
+<p>A project is a special HTML page supporting additional meta-data.</p>
+<p>A project requires the meta-data &lsquo;title&rsquo;, &lsquo;subtitle&rsquo;, &lsquo;tags&rsquo; and &lsquo;github&rsquo;. The meta-data &lsquo;tags&rsquo; is<br />
+a space separated list of tags. The meta-data &lsquo;github&rsquo; is the Github URL to the project code.</p>
+<p>You can find an example page in <code>test_data/_projects/project.md</code>.</p>
+<h3 id="articles">Articles</h3>
+<p>An article is a &lsquo;blog post&rsquo;. This type of content is intended for getting displayed as lists showing<br />
+the title and a brief abstract of the content.</p>
+<p>An article requires the meta-data &lsquo;title&rsquo;, &lsquo;category&rsquo;, &lsquo;tags&rsquo; and &lsquo;date&rsquo;. The meta-data &lsquo;tags&rsquo; is<br />
+a space separated list of tags. The meta-data &lsquo;category&rsquo; is a kind of primary tag and used to group<br />
+articles. The meta-data &lsquo;date&rsquo; is intended as publish date of the article.</p>
+<p>You can find an example page in <code>test_data/_articles/article.md</code>.</p>
+<h2 id="menus">Menus</h2>
+<p>The rendered menus are defined as simple text lists and placed in the folder <code>_structure</code>. Menus<br />
+support on hierarchy level and each line in the text file represents one menu entry.</p>
+<p>A line (menu entry) is structured as: [one or more spaces]<!-- raw HTML omitted --> &ndash; <!-- raw HTML omitted --></p>
+<p>If a line starts with one or more spaces, it is handled as sub-menu entry of the last menu entry<br />
+before.</p>
+<p>You can find an example menu in <code>test_data/_structure/top</code>.</p>
+<p>The name of the file is used to identify the menu data in the templates.</p>
+<h2 id="design">Design</h2>
+<p>Gostatic is using the go HTML render feature. You can find more details about the template syntax<br />
+at <a href="https://pkg.go.dev/html/template">Go html/template</a>.</p>
+<p>The templates for the rendered page are places into the <code>_templates</code> folder. All shared templates<br />
+are placed into <code>_templates/snippets</code>.</p>
+<p>Article detail pages are rendered using <code>_templates/article.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>Article lists are rendered using <code>_templates/articles.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>Article category lists are rendered using <code>_templates/category.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The home page is rendered using <code>_templates/index.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The other pages are rendered using <code>_templates/page.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The special page &lsquo;pageMap&rsquo; is rendered using <code>_templates/pageMap.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The pages list is rendered using <code>_templates/pages.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The project pages are rendered using <code>_templates/project.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The projects list is rendered using <code>_templates/projects.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The tag list is rendered using <code>_templates/tag.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<h3 id="meta-data">Meta-data</h3>
+<p>Additional meta-data form the data file headers can be used in the templates with<br />
+<code>{{index .Meta &quot;&lt;lower case name&gt;&quot;}}</code>.</p>
+
+    </div>
+
+                </div>
+                <div class="column is-3 is-hidden-mobile">
+                    
+    <div class="block">
+        <p class="subtitle">
+            Categories
+        </p>
+        
+    </div>
+    
+    <div class="block">
+        <p class="subtitle">
+            Tags
+        </p>
+        
+    </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+        <footer class="footer">
+            <div class="content has-text-centered">
+            <p>
+                <a href="https://thomux.eu">
+                    <span class="icon-text">
+                        <span class="icon">
+                            <img src="/images/thomux.svg">
+                        </span>
+                        <span>Thomux</span>
+                    </span>
+                </a>
+                /
+                Powered by <a href="https://bulma.io/">Bulma</a>
+                /
+                <a href="/page/impressum.html">Impressum</a>
+            </p>
+            </div>
+        </footer>
+
+    </body>
+</html>
+
+
+
+
+
