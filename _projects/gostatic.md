@@ -2,7 +2,7 @@
 title: Gostatic
 subtitle: A simple static site generator written in go.
 tags: go web blog static_page github_pages
-github: [https://github...](https://github.com/thomux/gostatic)
+github: https://github.com/thomux/gostatic
 ---
 
 Gostatic is a simple static page generator supporting pages, articles and projects as content data
