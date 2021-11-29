@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Project Gostatic :: Thomux</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A simple static site generator written in go." />
+<meta name="keywords" content="static, page, rendering, go" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://thomux.eu/posts/project-gostatic/" />
+
+
+
+
+<link rel="stylesheet" href="https://thomux.eu/assets/style.css">
+
+  <link rel="stylesheet" href="https://thomux.eu/assets/green.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://thomux.eu/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://thomux.eu/thomux_square.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:creator" content="thomuxeu" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Project Gostatic">
+<meta property="og:description" content="A simple static site generator written in go." />
+<meta property="og:url" content="https://thomux.eu/posts/project-gostatic/" />
+<meta property="og:site_name" content="Thomux" />
+
+  <meta property="og:image" content="https://thomux.eu/">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-11-29 08:47:25 &#43;0100 CET" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Thomux
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="https://github.com/thomux">Github</a></li>
+              
+            
+              
+                <li><a href="/impressum">Impressum</a></li>
+              
+            
+              
+                <li><a href="/tags/project">Projects</a></li>
+              
+            
+              
+                <li><a href="https://github.com/thomux/thomux.github.io/issues">Report an issue</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/contact">Contact</a></li>
+      
+    
+      
+        <li><a href="https://github.com/thomux">Github</a></li>
+      
+    
+      
+        <li><a href="/impressum">Impressum</a></li>
+      
+    
+      
+        <li><a href="/tags/project">Projects</a></li>
+      
+    
+      
+        <li><a href="https://github.com/thomux/thomux.github.io/issues">Report an issue</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://thomux.eu/posts/project-gostatic/">Project Gostatic</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-11-29
+        
+      </span>
+    
+    
+      <span class="post-author">:: Thomux</span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://thomux.eu/tags/project/">project</a>&nbsp;
+    
+    #<a href="https://thomux.eu/tags/go/">go</a>&nbsp;
+    
+    #<a href="https://thomux.eu/tags/static/">static</a>&nbsp;
+    
+  </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p><em>Project is deprecated - using now Hugo for blog</em></p>
+<hr>
+<p>Gostatic is a simple static page generator supporting pages, articles and projects as content data
+types.</p>
+<h2 id="content-data">Content data<a href="#content-data" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>The page content data is grouped by type into the folders <code>_articles</code>, <code>_pages</code> and <code>_projects</code>.</p>
+<p>All data is written as simple Markdown files, using a header started and ended with &lsquo;&mdash;&rsquo; to define
+the required meta-data for the page. The Markdown content below the header is rendered using
+<a href="https://github.com/yuin/goldmark">goldmark</a>. You can find the Markdown render code in
+<code>gostatic/markdown.go</code>.</p>
+<h3 id="pages">Pages<a href="#pages" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Pages are classic HTML pages using the global site menus and layout. You can use this type e.g. for
+your about page.</p>
+<p>A page requires the meta-data &lsquo;title&rsquo; and &lsquo;subtitle&rsquo;.</p>
+<p>You can find an example page in <code>test_data/_pages/page.md</code>.</p>
+<h3 id="projects">Projects<a href="#projects" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>A project is a special HTML page supporting additional meta-data.</p>
+<p>A project requires the meta-data &lsquo;title&rsquo;, &lsquo;subtitle&rsquo;, &lsquo;tags&rsquo; and &lsquo;github&rsquo;. The meta-data &lsquo;tags&rsquo; is
+a space separated list of tags. The meta-data &lsquo;github&rsquo; is the Github URL to the project code.</p>
+<p>You can find an example page in <code>test_data/_projects/project.md</code>.</p>
+<h3 id="articles">Articles<a href="#articles" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>An article is a &lsquo;blog post&rsquo;. This type of content is intended for getting displayed as lists showing
+the title and a brief abstract of the content.</p>
+<p>An article requires the meta-data &lsquo;title&rsquo;, &lsquo;category&rsquo;, &lsquo;tags&rsquo; and &lsquo;date&rsquo;. The meta-data &lsquo;tags&rsquo; is
+a space separated list of tags. The meta-data &lsquo;category&rsquo; is a kind of primary tag and used to group
+articles. The meta-data &lsquo;date&rsquo; is intended as publish date of the article.</p>
+<p>You can find an example page in <code>test_data/_articles/article.md</code>.</p>
+<h2 id="menus">Menus<a href="#menus" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>The rendered menus are defined as simple text lists and placed in the folder <code>_structure</code>. Menus
+support on hierarchy level and each line in the text file represents one menu entry.</p>
+<p>A line (menu entry) is structured as: [one or more spaces]<!-- raw HTML omitted --> &ndash; <!-- raw HTML omitted --></p>
+<p>If a line starts with one or more spaces, it is handled as sub-menu entry of the last menu entry
+before.</p>
+<p>You can find an example menu in <code>test_data/_structure/top</code>.</p>
+<p>The name of the file is used to identify the menu data in the templates.</p>
+<h2 id="design">Design<a href="#design" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Gostatic is using the go HTML render feature. You can find more details about the template syntax
+at <a href="https://pkg.go.dev/html/template">Go html/template</a>.</p>
+<p>The templates for the rendered page are places into the <code>_templates</code> folder. All shared templates
+are placed into <code>_templates/snippets</code>.</p>
+<p>Article detail pages are rendered using <code>_templates/article.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>Article lists are rendered using <code>_templates/articles.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>Article category lists are rendered using <code>_templates/category.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The home page is rendered using <code>_templates/index.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The other pages are rendered using <code>_templates/page.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The special page &lsquo;pageMap&rsquo; is rendered using <code>_templates/pageMap.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The pages list is rendered using <code>_templates/pages.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The project pages are rendered using <code>_templates/project.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The projects list is rendered using <code>_templates/projects.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<p>The tag list is rendered using <code>_templates/tag.tmpl</code> and all <code>_templates/snippets</code>.</p>
+<h3 id="meta-data">Meta-data<a href="#meta-data" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Additional meta-data form the data file headers can be used in the templates with
+<code>{{index .Meta &quot;&lt;lower case name&gt;&quot;}}</code>.</p>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://thomux.eu/assets/main.js"></script>
+<script src="https://thomux.eu/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
