@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Thomux</title>
-    <link>https://thomux.eu/</link>
+    <link>https://thomux.eu/docs/</link>
     <description>Recent content on Thomux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Nov 2021 08:47:37 +0100</lastBuildDate><atom:link href="https://thomux.eu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Nov 2021 08:47:37 +0100</lastBuildDate><atom:link href="https://thomux.eu/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project Jira Ticket Stats</title>
-      <link>https://thomux.eu/posts/project-jira-ticket-stats/</link>
+      <link>https://thomux.eu/docs/posts/project-jira-ticket-stats/</link>
       <pubDate>Mon, 29 Nov 2021 08:47:37 +0100</pubDate>
       
-      <guid>https://thomux.eu/posts/project-jira-ticket-stats/</guid>
+      <guid>https://thomux.eu/docs/posts/project-jira-ticket-stats/</guid>
       <description>[Project on Github](github: https://github.com/thomux/ticketstats)
 Usage As input, a Jira Filter CSV export is used. An example Jira query is:
 project = &amp;quot;XXX&amp;quot; and component = XXX and (resolutiondate is EMPTY or resolutiondate &amp;gt;= startOfDay(-365)) This query can be exported as CVS, separated by Semicolons, and used as input for this tool. To generate the report, run:
@@ -62,24 +62,24 @@ than 30 days. For each ticket the following data is displayed:&lt;/p&gt;
 &lt;li&gt;Creator: The user name of the Jira user who created the ticket.&lt;/li&gt;
 &lt;li&gt;Assignee: The user name of the Jira user who is assigned to the ticket.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/OldBugs.png&#34; alt=&#34;OldBugs.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/OldBugs.png&#34; alt=&#34;OldBugs.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bug-tickets&#34;&gt;Bug tickets&lt;/h3&gt;
 &lt;p&gt;The bug tickets section consists of three parts showing different bug ticket
 evaluations.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/BugTickets.png&#34; alt=&#34;BugTickets.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/BugTickets.png&#34; alt=&#34;BugTickets.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The first block show the change of ticket count in the last week and the last
 month. The &amp;ldquo;created&amp;rdquo; value is the sum of all bug tickets with a created date
 in the last week or month. The &amp;ldquo;resolved&amp;rdquo; value is the sum of all bug tickets
 with a resolved date in the last week or month. The &amp;ldquo;diff&amp;rdquo; is the difference
 between the two values, i.e. the change in the bug count.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/BugTicketsBlock1.png&#34; alt=&#34;BugTicketsBlock1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/BugTicketsBlock1.png&#34; alt=&#34;BugTicketsBlock1.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The second block is a matrix listing the ticket number for each fix version and
 security level combination and a sum of the tickets for each security level.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/BugTicketsBlock2.png&#34; alt=&#34;BugTicketsBlock2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/BugTicketsBlock2.png&#34; alt=&#34;BugTicketsBlock2.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The third block is a table of all tickets grouped by fix version and security
 level. For each ticket the priority, the status, the created date, the key and
 the summary is displayed.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/BugTicketsBlock3.png&#34; alt=&#34;BugTicketsBlock3.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/BugTicketsBlock3.png&#34; alt=&#34;BugTicketsBlock3.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;features&#34;&gt;Features&lt;/h3&gt;
 &lt;p&gt;The features section show a table containing all active feature tickets. Linked
 tickets are clustered. For each ticket the following information is displayed:&lt;/p&gt;
@@ -94,37 +94,37 @@ tickets are clustered. For each ticket the following information is displayed:&l
 &lt;li&gt;Progress: The ticket progress, calculated using time spend and the estimate.&lt;/li&gt;
 &lt;li&gt;FTE: The necessary FTEs to do the remaining work while keeping the due date.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/Features.png&#34; alt=&#34;Features.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/Features.png&#34; alt=&#34;Features.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;improvements&#34;&gt;Improvements&lt;/h3&gt;
 &lt;p&gt;The improvements section shows the same information as the features section, but
 for the ticket type &amp;ldquo;Improvement&amp;rdquo; (config.Types.Improvement).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/Improvements.png&#34; alt=&#34;Improvements.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/Improvements.png&#34; alt=&#34;Improvements.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;other-tickets&#34;&gt;Other tickets&lt;/h3&gt;
 &lt;p&gt;The other tickets section gives a small overview over the ticket count changes
 for the other ticket types, e.g. &amp;ldquo;Task&amp;rdquo; or &amp;ldquo;Sub-Task&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/OtherTickets.png&#34; alt=&#34;OtherTickets.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/OtherTickets.png&#34; alt=&#34;OtherTickets.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;resources&#34;&gt;Resources&lt;/h3&gt;
 &lt;p&gt;The resources section provides different evaluations of the spend work hours.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/Resources.png&#34; alt=&#34;Resources.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/Resources.png&#34; alt=&#34;Resources.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The first block gives an overview about the spend work hours and for which types
 and labels these hours were spend. The evaluated time ranges are last week,
 last month, last quarter and last year.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/ResourcesBlock1.png&#34; alt=&#34;ResourcesBlock1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/ResourcesBlock1.png&#34; alt=&#34;ResourcesBlock1.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The second block gives an overview about the average (median an mean) work time
 for each ticket type. The evaluation considers all tickets with booked hours
 (time spend &amp;gt; 0) which were closed during the last quarter and during the last
 year.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/ResourcesBlock2.png&#34; alt=&#34;ResourcesBlock2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/ResourcesBlock2.png&#34; alt=&#34;ResourcesBlock2.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;warnings&#34;&gt;Warnings&lt;/h3&gt;
 &lt;p&gt;The warnings section gives and overview of all tickets with sanitize check
 issues.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/Warnings.png&#34; alt=&#34;Warnings.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/Warnings.png&#34; alt=&#34;Warnings.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The first block shows all tickets without an assigned activity.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/WarningsBlock1.png&#34; alt=&#34;WarningsBlock1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/WarningsBlock1.png&#34; alt=&#34;WarningsBlock1.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The second block shows all tickets with invalid work logs. A work log is
 considered invalid if the ticket has an assigned activity and the activity of
 a work log doesn&amp;rsquo;t match this activity.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thomux.eu/images/jiraticketstats/WarningsBlock2.png&#34; alt=&#34;WarningsBlock2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thomux.eu/docs/images/jiraticketstats/WarningsBlock2.png&#34; alt=&#34;WarningsBlock2.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;config&#34;&gt;Config&lt;/h2&gt;
 &lt;p&gt;JiraTicketStats supports a configuration of different formats and external
 constants, e.g. ticket names. These values are internally stored in a config
@@ -216,10 +216,10 @@ report sections and the rendering of the report is implemented in
     
     <item>
       <title>Project Gostatic</title>
-      <link>https://thomux.eu/posts/project-gostatic/</link>
+      <link>https://thomux.eu/docs/posts/project-gostatic/</link>
       <pubDate>Mon, 29 Nov 2021 08:47:25 +0100</pubDate>
       
-      <guid>https://thomux.eu/posts/project-gostatic/</guid>
+      <guid>https://thomux.eu/docs/posts/project-gostatic/</guid>
       <description>Project is deprecated - using now Hugo for blog
  Gostatic is a simple static page generator supporting pages, articles and projects as content data types.
 Content data The page content data is grouped by type into the folders _articles, _pages and _projects.
@@ -282,10 +282,10 @@ are placed into &lt;code&gt;_templates/snippets&lt;/code&gt;.&lt;/p&gt;
     
     <item>
       <title>Hello World!</title>
-      <link>https://thomux.eu/posts/my-first-post/</link>
+      <link>https://thomux.eu/docs/posts/my-first-post/</link>
       <pubDate>Mon, 29 Nov 2021 07:48:53 +0100</pubDate>
       
-      <guid>https://thomux.eu/posts/my-first-post/</guid>
+      <guid>https://thomux.eu/docs/posts/my-first-post/</guid>
       <description>This is my personal blog, a place where I document what I learned and what I have built.</description>
       <content>&lt;p&gt;This is my personal blog, a place where I document what I learned and what I have built.&lt;/p&gt;
 </content>
@@ -293,10 +293,10 @@ are placed into &lt;code&gt;_templates/snippets&lt;/code&gt;.&lt;/p&gt;
     
     <item>
       <title>About</title>
-      <link>https://thomux.eu/about/</link>
+      <link>https://thomux.eu/docs/about/</link>
       <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://thomux.eu/about/</guid>
+      <guid>https://thomux.eu/docs/about/</guid>
       <description>What can you expect from this page? I created this page to document my learning, my spare time projects, and my server infrastructure and configuration.
 All I built and write comes without guarantees.</description>
       <content>&lt;h1 id=&#34;what-can-you-expect-from-this-page&#34;&gt;What can you expect from this page?&lt;/h1&gt;
@@ -307,10 +307,10 @@ All I built and write comes without guarantees.</description>
     
     <item>
       <title>Contact</title>
-      <link>https://thomux.eu/contact/</link>
+      <link>https://thomux.eu/docs/contact/</link>
       <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://thomux.eu/contact/</guid>
+      <guid>https://thomux.eu/docs/contact/</guid>
       <description>You want to know more? Feel free to contact me by mail, on Twitter or create a Github issue using the &amp;ldquo;Report an issue&amp;rdquo; button.
 You can reach me by mail using me@thomux.eu.
 You can fine me on Twitter as @thomuxeu.</description>
@@ -323,10 +323,10 @@ You can fine me on Twitter as @thomuxeu.</description>
     
     <item>
       <title>Impressum</title>
-      <link>https://thomux.eu/impressum/</link>
+      <link>https://thomux.eu/docs/impressum/</link>
       <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://thomux.eu/impressum/</guid>
+      <guid>https://thomux.eu/docs/impressum/</guid>
       <description>Angaben gemäß § 5 TMG Thomas Irgang
 Unter der Harbruck 1
 90584 Allersberg

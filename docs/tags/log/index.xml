@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>log on Thomux</title>
-    <link>https://thomux.eu/tags/log/</link>
+    <link>https://thomux.eu/docs/tags/log/</link>
     <description>Recent content in log on Thomux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Nov 2021 07:48:53 +0100</lastBuildDate><atom:link href="https://thomux.eu/tags/log/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Nov 2021 07:48:53 +0100</lastBuildDate><atom:link href="https://thomux.eu/docs/tags/log/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World!</title>
-      <link>https://thomux.eu/posts/my-first-post/</link>
+      <link>https://thomux.eu/docs/posts/my-first-post/</link>
       <pubDate>Mon, 29 Nov 2021 07:48:53 +0100</pubDate>
       
-      <guid>https://thomux.eu/posts/my-first-post/</guid>
+      <guid>https://thomux.eu/docs/posts/my-first-post/</guid>
       <description>This is my personal blog, a place where I document what I learned and what I have built.</description>
       <content>&lt;p&gt;This is my personal blog, a place where I document what I learned and what I have built.&lt;/p&gt;
 </content>

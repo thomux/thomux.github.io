@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>static on Thomux</title>
-    <link>https://thomux.eu/tags/static/</link>
+    <link>https://thomux.eu/docs/tags/static/</link>
     <description>Recent content in static on Thomux</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Nov 2021 08:47:25 +0100</lastBuildDate><atom:link href="https://thomux.eu/tags/static/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Nov 2021 08:47:25 +0100</lastBuildDate><atom:link href="https://thomux.eu/docs/tags/static/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project Gostatic</title>
-      <link>https://thomux.eu/posts/project-gostatic/</link>
+      <link>https://thomux.eu/docs/posts/project-gostatic/</link>
       <pubDate>Mon, 29 Nov 2021 08:47:25 +0100</pubDate>
       
-      <guid>https://thomux.eu/posts/project-gostatic/</guid>
+      <guid>https://thomux.eu/docs/posts/project-gostatic/</guid>
       <description>Project is deprecated - using now Hugo for blog
  Gostatic is a simple static page generator supporting pages, articles and projects as content data types.
 Content data The page content data is grouped by type into the folders _articles, _pages and _projects.
