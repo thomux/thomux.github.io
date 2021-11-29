@@ -1,9 +1,9 @@
-baseURL = 'https://thomux.eu/docs/'
+baseURL = 'https://thomux.eu/'
 languageCode = 'en-us'
 title = 'Thomux'
 theme = "terminal"
 paginate = 5
-publishDir = "docs"
+publishDir = ""
 
 [params]
   # dir name of your main content (default is `content/posts`).
