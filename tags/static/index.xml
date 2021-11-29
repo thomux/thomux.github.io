@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>static on Thomux</title><link>https://thomux.eu/tags/static/</link><description>Recent content in static on Thomux</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Nov 2021 08:47:25 +0100</lastBuildDate><atom:link href="https://thomux.eu/tags/static/index.xml" rel="self" type="application/rss+xml"/><item><title>Project Gostatic</title><link>https://thomux.eu/posts/project-gostatic/</link><pubDate>Mon, 29 Nov 2021 08:47:25 +0100</pubDate><guid>https://thomux.eu/posts/project-gostatic/</guid><description>Project is deprecated - using now Hugo for blog
+Gostatic is a simple static page generator supporting pages, articles and projects as content data types.
+Content data The page content data is grouped by type into the folders _articles, _pages and _projects.
+All data is written as simple Markdown files, using a header started and ended with &amp;lsquo;&amp;mdash;&amp;rsquo; to define the required meta-data for the page. The Markdown content below the header is rendered using goldmark.</description><content>&lt;p>&lt;em>Project is deprecated - using now Hugo for blog&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>Gostatic is a simple static page generator supporting pages, articles and projects as content data
+types.&lt;/p>
+&lt;h2 id="content-data">Content data&lt;/h2>
+&lt;p>The page content data is grouped by type into the folders &lt;code>_articles&lt;/code>, &lt;code>_pages&lt;/code> and &lt;code>_projects&lt;/code>.&lt;/p>
+&lt;p>All data is written as simple Markdown files, using a header started and ended with &amp;lsquo;&amp;mdash;&amp;rsquo; to define
+the required meta-data for the page. The Markdown content below the header is rendered using
+&lt;a href="https://github.com/yuin/goldmark">goldmark&lt;/a>. You can find the Markdown render code in
+&lt;code>gostatic/markdown.go&lt;/code>.&lt;/p>
+&lt;h3 id="pages">Pages&lt;/h3>
+&lt;p>Pages are classic HTML pages using the global site menus and layout. You can use this type e.g. for
+your about page.&lt;/p>
+&lt;p>A page requires the meta-data &amp;lsquo;title&amp;rsquo; and &amp;lsquo;subtitle&amp;rsquo;.&lt;/p>
+&lt;p>You can find an example page in &lt;code>test_data/_pages/page.md&lt;/code>.&lt;/p>
+&lt;h3 id="projects">Projects&lt;/h3>
+&lt;p>A project is a special HTML page supporting additional meta-data.&lt;/p>
+&lt;p>A project requires the meta-data &amp;lsquo;title&amp;rsquo;, &amp;lsquo;subtitle&amp;rsquo;, &amp;lsquo;tags&amp;rsquo; and &amp;lsquo;github&amp;rsquo;. The meta-data &amp;lsquo;tags&amp;rsquo; is
+a space separated list of tags. The meta-data &amp;lsquo;github&amp;rsquo; is the Github URL to the project code.&lt;/p>
+&lt;p>You can find an example page in &lt;code>test_data/_projects/project.md&lt;/code>.&lt;/p>
+&lt;h3 id="articles">Articles&lt;/h3>
+&lt;p>An article is a &amp;lsquo;blog post&amp;rsquo;. This type of content is intended for getting displayed as lists showing
+the title and a brief abstract of the content.&lt;/p>
+&lt;p>An article requires the meta-data &amp;lsquo;title&amp;rsquo;, &amp;lsquo;category&amp;rsquo;, &amp;lsquo;tags&amp;rsquo; and &amp;lsquo;date&amp;rsquo;. The meta-data &amp;lsquo;tags&amp;rsquo; is
+a space separated list of tags. The meta-data &amp;lsquo;category&amp;rsquo; is a kind of primary tag and used to group
+articles. The meta-data &amp;lsquo;date&amp;rsquo; is intended as publish date of the article.&lt;/p>
+&lt;p>You can find an example page in &lt;code>test_data/_articles/article.md&lt;/code>.&lt;/p>
+&lt;h2 id="menus">Menus&lt;/h2>
+&lt;p>The rendered menus are defined as simple text lists and placed in the folder &lt;code>_structure&lt;/code>. Menus
+support on hierarchy level and each line in the text file represents one menu entry.&lt;/p>
+&lt;p>A line (menu entry) is structured as: [one or more spaces]&lt;!-- raw HTML omitted --> &amp;ndash; &lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>If a line starts with one or more spaces, it is handled as sub-menu entry of the last menu entry
+before.&lt;/p>
+&lt;p>You can find an example menu in &lt;code>test_data/_structure/top&lt;/code>.&lt;/p>
+&lt;p>The name of the file is used to identify the menu data in the templates.&lt;/p>
+&lt;h2 id="design">Design&lt;/h2>
+&lt;p>Gostatic is using the go HTML render feature. You can find more details about the template syntax
+at &lt;a href="https://pkg.go.dev/html/template">Go html/template&lt;/a>.&lt;/p>
+&lt;p>The templates for the rendered page are places into the &lt;code>_templates&lt;/code> folder. All shared templates
+are placed into &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>Article detail pages are rendered using &lt;code>_templates/article.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>Article lists are rendered using &lt;code>_templates/articles.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>Article category lists are rendered using &lt;code>_templates/category.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The home page is rendered using &lt;code>_templates/index.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The other pages are rendered using &lt;code>_templates/page.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The special page &amp;lsquo;pageMap&amp;rsquo; is rendered using &lt;code>_templates/pageMap.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The pages list is rendered using &lt;code>_templates/pages.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The project pages are rendered using &lt;code>_templates/project.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The projects list is rendered using &lt;code>_templates/projects.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The tag list is rendered using &lt;code>_templates/tag.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;h3 id="meta-data">Meta-data&lt;/h3>
+&lt;p>Additional meta-data form the data file headers can be used in the templates with
+&lt;code>{{index .Meta &amp;quot;&amp;lt;lower case name&amp;gt;&amp;quot;}}&lt;/code>.&lt;/p></content></item></channel></rss>

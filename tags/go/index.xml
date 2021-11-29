@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>go on Thomux</title><link>https://thomux.eu/tags/go/</link><description>Recent content in go on Thomux</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Nov 2021 08:47:37 +0100</lastBuildDate><atom:link href="https://thomux.eu/tags/go/index.xml" rel="self" type="application/rss+xml"/><item><title>Project Jira Ticket Stats</title><link>https://thomux.eu/posts/project-jira-ticket-stats/</link><pubDate>Mon, 29 Nov 2021 08:47:37 +0100</pubDate><guid>https://thomux.eu/posts/project-jira-ticket-stats/</guid><description>[Project on Github](github: https://github.com/thomux/ticketstats)
+Usage As input, a Jira Filter CSV export is used. An example Jira query is:
+project = &amp;quot;XXX&amp;quot; and component = XXX and (resolutiondate is EMPTY or resolutiondate &amp;gt;= startOfDay(-365)) This query can be exported as CVS, separated by Semicolons, and used as input for this tool. To generate the report, run:
+jiraticketstats -csv &amp;lt;path to your export&amp;gt; JiraTicketStats supports the following parameters:
+csv: Path to the Jira export.</description><content>&lt;p>[Project on Github](github: &lt;a href="https://github.com/thomux/ticketstats">https://github.com/thomux/ticketstats&lt;/a>)&lt;/p>
+&lt;h2 id="usage">Usage&lt;/h2>
+&lt;p>As input, a Jira Filter CSV export is used. An example Jira query is:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-jira" data-lang="jira">project = &amp;quot;XXX&amp;quot; and component = XXX and (resolutiondate is EMPTY or resolutiondate &amp;gt;= startOfDay(-365))
+&lt;/code>&lt;/pre>&lt;p>This query can be exported as CVS, separated by Semicolons, and used as input
+for this tool. To generate the report, run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">jiraticketstats -csv &amp;lt;path to your export&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>JiraTicketStats supports the following parameters:&lt;/p>
+&lt;ul>
+&lt;li>csv: Path to the Jira export.&lt;/li>
+&lt;li>jira: Jira base URL to generate links. This URL + issue key should be valid.&lt;/li>
+&lt;li>project: Jira project key to filter the issue set.&lt;/li>
+&lt;li>component: Component name to filter the issue set.&lt;/li>
+&lt;li>splitByComponent: Generate a report for each components of the issue set.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example">Example&lt;/h2>
+&lt;p>The file &lt;code>exmple.data&lt;/code> contains some example issues. You can generate a example
+test record with the command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">go run . -csv example.data
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will generate a the reports &lt;code>report_.html&lt;/code> (all tickets) and the module
+report &lt;code>report_Module A.html&lt;/code>. To generate just a module report, the parameter
+&lt;code>component&lt;/code> can be used.&lt;/p>
+&lt;h2 id="report">Report&lt;/h2>
+&lt;p>The output of JiraTicketStats is an HTML report containing the following sections:&lt;/p>
+&lt;ul>
+&lt;li>Old bug tickets&lt;/li>
+&lt;li>Bug tickets&lt;/li>
+&lt;li>Features&lt;/li>
+&lt;li>Improvements&lt;/li>
+&lt;li>Other tickets&lt;/li>
+&lt;li>Resources&lt;/li>
+&lt;li>Warnings&lt;/li>
+&lt;/ul>
+&lt;h3 id="old-bug-tickets">Old bug tickets&lt;/h3>
+&lt;p>The old bug tickets section consists of a table listing all bug tickets older
+than 30 days. For each ticket the following data is displayed:&lt;/p>
+&lt;ul>
+&lt;li>Issue: Jira ticket key and summary. The key is a link to the ticket in Jira.&lt;/li>
+&lt;li>Age: The age of the tickets as days, calculated using the Jira creation date.&lt;/li>
+&lt;li>Labels: All labels assigned to the ticket.&lt;/li>
+&lt;li>Status: The current status of the ticket.&lt;/li>
+&lt;li>Creator: The user name of the Jira user who created the ticket.&lt;/li>
+&lt;li>Assignee: The user name of the Jira user who is assigned to the ticket.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/OldBugs.png" alt="OldBugs.png">&lt;/p>
+&lt;h3 id="bug-tickets">Bug tickets&lt;/h3>
+&lt;p>The bug tickets section consists of three parts showing different bug ticket
+evaluations.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/BugTickets.png" alt="BugTickets.png">&lt;/p>
+&lt;p>The first block show the change of ticket count in the last week and the last
+month. The &amp;ldquo;created&amp;rdquo; value is the sum of all bug tickets with a created date
+in the last week or month. The &amp;ldquo;resolved&amp;rdquo; value is the sum of all bug tickets
+with a resolved date in the last week or month. The &amp;ldquo;diff&amp;rdquo; is the difference
+between the two values, i.e. the change in the bug count.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/BugTicketsBlock1.png" alt="BugTicketsBlock1.png">&lt;/p>
+&lt;p>The second block is a matrix listing the ticket number for each fix version and
+security level combination and a sum of the tickets for each security level.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/BugTicketsBlock2.png" alt="BugTicketsBlock2.png">&lt;/p>
+&lt;p>The third block is a table of all tickets grouped by fix version and security
+level. For each ticket the priority, the status, the created date, the key and
+the summary is displayed.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/BugTicketsBlock3.png" alt="BugTicketsBlock3.png">&lt;/p>
+&lt;h3 id="features">Features&lt;/h3>
+&lt;p>The features section show a table containing all active feature tickets. Linked
+tickets are clustered. For each ticket the following information is displayed:&lt;/p>
+&lt;ul>
+&lt;li>Key&lt;/li>
+&lt;li>Summary&lt;/li>
+&lt;li>Status&lt;/li>
+&lt;li>Fix Versions&lt;/li>
+&lt;li>Due&lt;/li>
+&lt;li>Time spend: Booked hours for the Jira ticket.&lt;/li>
+&lt;li>Estimate: Estimated hours for the ticket.&lt;/li>
+&lt;li>Progress: The ticket progress, calculated using time spend and the estimate.&lt;/li>
+&lt;li>FTE: The necessary FTEs to do the remaining work while keeping the due date.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/Features.png" alt="Features.png">&lt;/p>
+&lt;h3 id="improvements">Improvements&lt;/h3>
+&lt;p>The improvements section shows the same information as the features section, but
+for the ticket type &amp;ldquo;Improvement&amp;rdquo; (config.Types.Improvement).&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/Improvements.png" alt="Improvements.png">&lt;/p>
+&lt;h3 id="other-tickets">Other tickets&lt;/h3>
+&lt;p>The other tickets section gives a small overview over the ticket count changes
+for the other ticket types, e.g. &amp;ldquo;Task&amp;rdquo; or &amp;ldquo;Sub-Task&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/OtherTickets.png" alt="OtherTickets.png">&lt;/p>
+&lt;h3 id="resources">Resources&lt;/h3>
+&lt;p>The resources section provides different evaluations of the spend work hours.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/Resources.png" alt="Resources.png">&lt;/p>
+&lt;p>The first block gives an overview about the spend work hours and for which types
+and labels these hours were spend. The evaluated time ranges are last week,
+last month, last quarter and last year.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/ResourcesBlock1.png" alt="ResourcesBlock1.png">&lt;/p>
+&lt;p>The second block gives an overview about the average (median an mean) work time
+for each ticket type. The evaluation considers all tickets with booked hours
+(time spend &amp;gt; 0) which were closed during the last quarter and during the last
+year.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/ResourcesBlock2.png" alt="ResourcesBlock2.png">&lt;/p>
+&lt;h3 id="warnings">Warnings&lt;/h3>
+&lt;p>The warnings section gives and overview of all tickets with sanitize check
+issues.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/Warnings.png" alt="Warnings.png">&lt;/p>
+&lt;p>The first block shows all tickets without an assigned activity.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/WarningsBlock1.png" alt="WarningsBlock1.png">&lt;/p>
+&lt;p>The second block shows all tickets with invalid work logs. A work log is
+considered invalid if the ticket has an assigned activity and the activity of
+a work log doesn&amp;rsquo;t match this activity.&lt;/p>
+&lt;p>&lt;img src="https://thomux.eu/images/jiraticketstats/WarningsBlock2.png" alt="WarningsBlock2.png">&lt;/p>
+&lt;h2 id="config">Config&lt;/h2>
+&lt;p>JiraTicketStats supports a configuration of different formats and external
+constants, e.g. ticket names. These values are internally stored in a config
+structure implemented in &lt;code>config.go&lt;/code>. When the tool is executed, a file
+&lt;code>config.json&lt;/code> is read form the current working directory. If this file doesn&amp;rsquo;t
+exist it is created using default values.&lt;/p>
+&lt;h2 id="architecture">Architecture&lt;/h2>
+&lt;p>JiraTicketStats is implemented using the package &lt;code>ticketstats&lt;/code> and split in different
+Go files, grouping logical sections.&lt;/p>
+&lt;h3 id="config-1">Config&lt;/h3>
+&lt;p>JiraTicketStats is using Config data structures which groups different values,
+mostly strings, required during the processing steps and configured in Jira,
+e.g. type and state names. This is implemented in &lt;code>config.go&lt;/code>.&lt;/p>
+&lt;h3 id="data">Data&lt;/h3>
+&lt;p>It using two types of data models, one for evaluation implemented in &lt;code>issue.go&lt;/code>,
+and one for rendering, implemented in &lt;code>render.go&lt;/code>.&lt;/p>
+&lt;h4 id="parsing-the-data">Parsing the data&lt;/h4>
+&lt;p>JiraTicketStats reads the following field from the Jira export to the evaluation
+data type:&lt;/p>
+&lt;ul>
+&lt;li>&amp;ldquo;Summary -&amp;gt; issue.Summary (string)&lt;/li>
+&lt;li>Issue key -&amp;gt; issue.Key (string)&lt;/li>
+&lt;li>Issue id -&amp;gt; issue.Id (string)&lt;/li>
+&lt;li>Parent id -&amp;gt; issue.Parent (string)&lt;/li>
+&lt;li>Issue Type -&amp;gt; issue.Type (string)&lt;/li>
+&lt;li>Status -&amp;gt; issue.Status (string)&lt;/li>
+&lt;li>Priority -&amp;gt; issue.Priority (string)&lt;/li>
+&lt;li>Assignee -&amp;gt; issue.Assignee (string)&lt;/li>
+&lt;li>Creator -&amp;gt; issue.Creator (string)&lt;/li>
+&lt;li>Created -&amp;gt; issue.Created (time.Time)&lt;/li>
+&lt;li>Updated -&amp;gt; issue.Updated (time.Time)&lt;/li>
+&lt;li>Last Viewed -&amp;gt; issue.LastViewed (time.Time)&lt;/li>
+&lt;li>Affects Version/s -&amp;gt; issue.AffectsVersions ([]string)&lt;/li>
+&lt;li>Fix Version/s -&amp;gt; issue.FixVersions ([]string)&lt;/li>
+&lt;li>Component/s -&amp;gt; issue.Components ([]string)&lt;/li>
+&lt;li>Log Work -&amp;gt; issue.LogWorks ([]WorkLog)&lt;/li>
+&lt;li>Original Estimate -&amp;gt; issue.OriginalEstimate (Work)&lt;/li>
+&lt;li>Remaining Estimate -&amp;gt; issue.RemainingEstimate (Work)&lt;/li>
+&lt;li>Time Spent -&amp;gt; issue.TimeSpend (Work)&lt;/li>
+&lt;li>Σ Original Estimate -&amp;gt; issue.SumOriginalEstimate (Work)&lt;/li>
+&lt;li>Σ Remaining Estimate -&amp;gt; issue.SumRemainingEstimate (Work)&lt;/li>
+&lt;li>Σ Time Spent -&amp;gt; issue.SumTimeSpend (Work)&lt;/li>
+&lt;li>Security Level -&amp;gt; issue.SecurityLevel (string)&lt;/li>
+&lt;li>Labels -&amp;gt; issue.Labels ([]string)&lt;/li>
+&lt;li>Resolution -&amp;gt; issue.Resolution (string)&lt;/li>
+&lt;li>Resolved -&amp;gt; issue.Resolved (time.Time)&lt;/li>
+&lt;li>Due Date -&amp;gt; issue.Due (time.Time)&lt;/li>
+&lt;li>Outward issue link (Blocks) -&amp;gt; issue.LinkBlocks ([]string)&lt;/li>
+&lt;li>Outward issue link (Causes) -&amp;gt; issue.LinkCauses ([]string)&lt;/li>
+&lt;li>Outward issue link (Cloners)-&amp;gt; issue.LinkCloners ([]string)&lt;/li>
+&lt;li>Outward issue link (Dependency) -&amp;gt; issue.LinkDependencies ([]string)&lt;/li>
+&lt;li>Outward issue link (Duplicate) -&amp;gt; issue.LinkDuplicates ([]string)&lt;/li>
+&lt;li>Outward issue link (Issue split)-&amp;gt; issue.LinkIssueSplits ([]string)&lt;/li>
+&lt;li>Outward issue link (Part) -&amp;gt; issue.LinkParts ([]string)&lt;/li>
+&lt;li>Outward issue link (Relates) -&amp;gt; issue.LinkRelates ([]string)&lt;/li>
+&lt;li>Outward issue link (Relation)-&amp;gt; issue.LinkRelations ([]string)&lt;/li>
+&lt;li>Outward issue link (Triggers) -&amp;gt; issue.LinkTriggers ([]string)&lt;/li>
+&lt;li>Outward issue link (linkIssue)-&amp;gt; issue.LinkLinkIssues ([]string)&lt;/li>
+&lt;li>Outward issue link (parent) -&amp;gt; issue.LinkParents ([]string)&lt;/li>
+&lt;li>config.Customs.ExternalId -&amp;gt; issue.CustomExternalId (string)&lt;/li>
+&lt;li>config.Customs.SupplierReference -&amp;gt; issue.CustomSupplierRef (string)&lt;/li>
+&lt;li>config.Customs.Variant -&amp;gt; issue.CustomVariant (string)&lt;/li>
+&lt;li>config.Customs.Account -&amp;gt; issue.CustomActivity (string)&lt;/li>
+&lt;li>config.Customs.Category -&amp;gt; issue.CustomCategory (string)&lt;/li>
+&lt;/ul>
+&lt;p>The implementation can be found &lt;code>issue.go&lt;/code>.&lt;/p>
+&lt;h4 id="type-worklog">Type WorkLog&lt;/h4>
+&lt;p>The type &amp;lsquo;WorkLog&amp;rsquo; is defined in &lt;code>issue.go&lt;/code> and splits the Jira &amp;lsquo;Log Work&amp;rsquo; data
+into teh fields:&lt;/p>
+&lt;ul>
+&lt;li>Hours (Work)&lt;/li>
+&lt;li>Date (time.Time)&lt;/li>
+&lt;li>Activity (string)&lt;/li>
+&lt;/ul>
+&lt;h4 id="type-work">Type Work&lt;/h4>
+&lt;p>The type Work is used to represent work hours. It is just a float64 with the
+unit work hours, not seconds as used by Jira.&lt;/p>
+&lt;h4 id="generating-the-report">Generating the report&lt;/h4>
+&lt;p>For generating the report different types are used, supporting rendered values,
+e.g. string instead of time.Time for dates. The data types for rendering are
+defined in &lt;code>render.go&lt;/code>. The main render function is &lt;code>Issue.ToReportIssue&lt;/code> which
+transforms an Issue to its report representation.&lt;/p>
+&lt;p>The statistic calculations are implemented in &lt;code>stats.go&lt;/code>.&lt;/p>
+&lt;p>The main logic, for parsing the data, generating the data for the different
+report sections and the rendering of the report is implemented in
+&lt;code>ticketstats.go&lt;/code>.&lt;/p></content></item><item><title>Project Gostatic</title><link>https://thomux.eu/posts/project-gostatic/</link><pubDate>Mon, 29 Nov 2021 08:47:25 +0100</pubDate><guid>https://thomux.eu/posts/project-gostatic/</guid><description>Project is deprecated - using now Hugo for blog
+Gostatic is a simple static page generator supporting pages, articles and projects as content data types.
+Content data The page content data is grouped by type into the folders _articles, _pages and _projects.
+All data is written as simple Markdown files, using a header started and ended with &amp;lsquo;&amp;mdash;&amp;rsquo; to define the required meta-data for the page. The Markdown content below the header is rendered using goldmark.</description><content>&lt;p>&lt;em>Project is deprecated - using now Hugo for blog&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>Gostatic is a simple static page generator supporting pages, articles and projects as content data
+types.&lt;/p>
+&lt;h2 id="content-data">Content data&lt;/h2>
+&lt;p>The page content data is grouped by type into the folders &lt;code>_articles&lt;/code>, &lt;code>_pages&lt;/code> and &lt;code>_projects&lt;/code>.&lt;/p>
+&lt;p>All data is written as simple Markdown files, using a header started and ended with &amp;lsquo;&amp;mdash;&amp;rsquo; to define
+the required meta-data for the page. The Markdown content below the header is rendered using
+&lt;a href="https://github.com/yuin/goldmark">goldmark&lt;/a>. You can find the Markdown render code in
+&lt;code>gostatic/markdown.go&lt;/code>.&lt;/p>
+&lt;h3 id="pages">Pages&lt;/h3>
+&lt;p>Pages are classic HTML pages using the global site menus and layout. You can use this type e.g. for
+your about page.&lt;/p>
+&lt;p>A page requires the meta-data &amp;lsquo;title&amp;rsquo; and &amp;lsquo;subtitle&amp;rsquo;.&lt;/p>
+&lt;p>You can find an example page in &lt;code>test_data/_pages/page.md&lt;/code>.&lt;/p>
+&lt;h3 id="projects">Projects&lt;/h3>
+&lt;p>A project is a special HTML page supporting additional meta-data.&lt;/p>
+&lt;p>A project requires the meta-data &amp;lsquo;title&amp;rsquo;, &amp;lsquo;subtitle&amp;rsquo;, &amp;lsquo;tags&amp;rsquo; and &amp;lsquo;github&amp;rsquo;. The meta-data &amp;lsquo;tags&amp;rsquo; is
+a space separated list of tags. The meta-data &amp;lsquo;github&amp;rsquo; is the Github URL to the project code.&lt;/p>
+&lt;p>You can find an example page in &lt;code>test_data/_projects/project.md&lt;/code>.&lt;/p>
+&lt;h3 id="articles">Articles&lt;/h3>
+&lt;p>An article is a &amp;lsquo;blog post&amp;rsquo;. This type of content is intended for getting displayed as lists showing
+the title and a brief abstract of the content.&lt;/p>
+&lt;p>An article requires the meta-data &amp;lsquo;title&amp;rsquo;, &amp;lsquo;category&amp;rsquo;, &amp;lsquo;tags&amp;rsquo; and &amp;lsquo;date&amp;rsquo;. The meta-data &amp;lsquo;tags&amp;rsquo; is
+a space separated list of tags. The meta-data &amp;lsquo;category&amp;rsquo; is a kind of primary tag and used to group
+articles. The meta-data &amp;lsquo;date&amp;rsquo; is intended as publish date of the article.&lt;/p>
+&lt;p>You can find an example page in &lt;code>test_data/_articles/article.md&lt;/code>.&lt;/p>
+&lt;h2 id="menus">Menus&lt;/h2>
+&lt;p>The rendered menus are defined as simple text lists and placed in the folder &lt;code>_structure&lt;/code>. Menus
+support on hierarchy level and each line in the text file represents one menu entry.&lt;/p>
+&lt;p>A line (menu entry) is structured as: [one or more spaces]&lt;!-- raw HTML omitted --> &amp;ndash; &lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>If a line starts with one or more spaces, it is handled as sub-menu entry of the last menu entry
+before.&lt;/p>
+&lt;p>You can find an example menu in &lt;code>test_data/_structure/top&lt;/code>.&lt;/p>
+&lt;p>The name of the file is used to identify the menu data in the templates.&lt;/p>
+&lt;h2 id="design">Design&lt;/h2>
+&lt;p>Gostatic is using the go HTML render feature. You can find more details about the template syntax
+at &lt;a href="https://pkg.go.dev/html/template">Go html/template&lt;/a>.&lt;/p>
+&lt;p>The templates for the rendered page are places into the &lt;code>_templates&lt;/code> folder. All shared templates
+are placed into &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>Article detail pages are rendered using &lt;code>_templates/article.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>Article lists are rendered using &lt;code>_templates/articles.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>Article category lists are rendered using &lt;code>_templates/category.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The home page is rendered using &lt;code>_templates/index.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The other pages are rendered using &lt;code>_templates/page.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The special page &amp;lsquo;pageMap&amp;rsquo; is rendered using &lt;code>_templates/pageMap.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The pages list is rendered using &lt;code>_templates/pages.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The project pages are rendered using &lt;code>_templates/project.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The projects list is rendered using &lt;code>_templates/projects.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;p>The tag list is rendered using &lt;code>_templates/tag.tmpl&lt;/code> and all &lt;code>_templates/snippets&lt;/code>.&lt;/p>
+&lt;h3 id="meta-data">Meta-data&lt;/h3>
+&lt;p>Additional meta-data form the data file headers can be used in the templates with
+&lt;code>{{index .Meta &amp;quot;&amp;lt;lower case name&amp;gt;&amp;quot;}}&lt;/code>.&lt;/p></content></item></channel></rss>
