@@ -20,5 +20,5 @@ jobs:
           HUGO_VERSION: 0.88.0
           TARGET_REPO: thomux/thomux.github.io
           TARGET_BRANCH: page
-          TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CNAME: thomux.eu
