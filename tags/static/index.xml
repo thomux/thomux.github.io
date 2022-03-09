@@ -14,17 +14,17 @@ the required meta-data for the page. The Markdown content below the header is re
 &lt;h3 id="pages">Pages&lt;/h3>
 &lt;p>Pages are classic HTML pages using the global site menus and layout. You can use this type e.g. for
 your about page.&lt;/p>
-&lt;p>A page requires the meta-data &amp;lsquo;title&amp;rsquo; and &amp;lsquo;subtitle&amp;rsquo;.&lt;/p>
+&lt;p>A page requires the meta-data &amp;rsquo;title&amp;rsquo; and &amp;lsquo;subtitle&amp;rsquo;.&lt;/p>
 &lt;p>You can find an example page in &lt;code>test_data/_pages/page.md&lt;/code>.&lt;/p>
 &lt;h3 id="projects">Projects&lt;/h3>
 &lt;p>A project is a special HTML page supporting additional meta-data.&lt;/p>
-&lt;p>A project requires the meta-data &amp;lsquo;title&amp;rsquo;, &amp;lsquo;subtitle&amp;rsquo;, &amp;lsquo;tags&amp;rsquo; and &amp;lsquo;github&amp;rsquo;. The meta-data &amp;lsquo;tags&amp;rsquo; is
+&lt;p>A project requires the meta-data &amp;rsquo;title&amp;rsquo;, &amp;lsquo;subtitle&amp;rsquo;, &amp;rsquo;tags&amp;rsquo; and &amp;lsquo;github&amp;rsquo;. The meta-data &amp;rsquo;tags&amp;rsquo; is
 a space separated list of tags. The meta-data &amp;lsquo;github&amp;rsquo; is the Github URL to the project code.&lt;/p>
 &lt;p>You can find an example page in &lt;code>test_data/_projects/project.md&lt;/code>.&lt;/p>
 &lt;h3 id="articles">Articles&lt;/h3>
 &lt;p>An article is a &amp;lsquo;blog post&amp;rsquo;. This type of content is intended for getting displayed as lists showing
 the title and a brief abstract of the content.&lt;/p>
-&lt;p>An article requires the meta-data &amp;lsquo;title&amp;rsquo;, &amp;lsquo;category&amp;rsquo;, &amp;lsquo;tags&amp;rsquo; and &amp;lsquo;date&amp;rsquo;. The meta-data &amp;lsquo;tags&amp;rsquo; is
+&lt;p>An article requires the meta-data &amp;rsquo;title&amp;rsquo;, &amp;lsquo;category&amp;rsquo;, &amp;rsquo;tags&amp;rsquo; and &amp;lsquo;date&amp;rsquo;. The meta-data &amp;rsquo;tags&amp;rsquo; is
 a space separated list of tags. The meta-data &amp;lsquo;category&amp;rsquo; is a kind of primary tag and used to group
 articles. The meta-data &amp;lsquo;date&amp;rsquo; is intended as publish date of the article.&lt;/p>
 &lt;p>You can find an example page in &lt;code>test_data/_articles/article.md&lt;/code>.&lt;/p>

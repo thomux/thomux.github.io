@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Thomux</title><link>https://thomux.eu/posts/</link><description>Recent content in Posts on Thomux</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Nov 2021 08:47:37 +0100</lastBuildDate><atom:link href="https://thomux.eu/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Project Jira Ticket Stats</title><link>https://thomux.eu/posts/project-jira-ticket-stats/</link><pubDate>Mon, 29 Nov 2021 08:47:37 +0100</pubDate><guid>https://thomux.eu/posts/project-jira-ticket-stats/</guid><description>[Project on Github](github: https://github.com/thomux/ticketstats)
 Usage As input, a Jira Filter CSV export is used. An example Jira query is:
-project = &amp;quot;XXX&amp;quot; and component = XXX and (resolutiondate is EMPTY or resolutiondate &amp;gt;= startOfDay(-365)) This query can be exported as CVS, separated by Semicolons, and used as input for this tool. To generate the report, run:
+project = &amp;#34;XXX&amp;#34; and component = XXX and (resolutiondate is EMPTY or resolutiondate &amp;gt;= startOfDay(-365)) This query can be exported as CVS, separated by Semicolons, and used as input for this tool. To generate the report, run:
 jiraticketstats -csv &amp;lt;path to your export&amp;gt; JiraTicketStats supports the following parameters:
 csv: Path to the Jira export.</description><content>&lt;p>[Project on Github](github: &lt;a href="https://github.com/thomux/ticketstats">https://github.com/thomux/ticketstats&lt;/a>)&lt;/p>
 &lt;h2 id="usage">Usage&lt;/h2>
 &lt;p>As input, a Jira Filter CSV export is used. An example Jira query is:&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-jira" data-lang="jira">project = &amp;quot;XXX&amp;quot; and component = XXX and (resolutiondate is EMPTY or resolutiondate &amp;gt;= startOfDay(-365))
+&lt;pre tabindex="0">&lt;code class="language-jira" data-lang="jira">project = &amp;#34;XXX&amp;#34; and component = XXX and (resolutiondate is EMPTY or resolutiondate &amp;gt;= startOfDay(-365))
 &lt;/code>&lt;/pre>&lt;p>This query can be exported as CVS, separated by Semicolons, and used as input
 for this tool. To generate the report, run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">jiraticketstats -csv &amp;lt;path to your export&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>JiraTicketStats supports the following parameters:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>jiraticketstats -csv &amp;lt;path to your export&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>JiraTicketStats supports the following parameters:&lt;/p>
 &lt;ul>
 &lt;li>csv: Path to the Jira export.&lt;/li>
 &lt;li>jira: Jira base URL to generate links. This URL + issue key should be valid.&lt;/li>
@@ -20,8 +20,8 @@ for this tool. To generate the report, run:&lt;/p>
 &lt;h2 id="example">Example&lt;/h2>
 &lt;p>The file &lt;code>exmple.data&lt;/code> contains some example issues. You can generate a example
 test record with the command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">go run . -csv example.data
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will generate a the reports &lt;code>report_.html&lt;/code> (all tickets) and the module
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go run . -csv example.data
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will generate a the reports &lt;code>report_.html&lt;/code> (all tickets) and the module
 report &lt;code>report_Module A.html&lt;/code>. To generate just a module report, the parameter
 &lt;code>component&lt;/code> can be used.&lt;/p>
 &lt;h2 id="report">Report&lt;/h2>
@@ -210,17 +210,17 @@ the required meta-data for the page. The Markdown content below the header is re
 &lt;h3 id="pages">Pages&lt;/h3>
 &lt;p>Pages are classic HTML pages using the global site menus and layout. You can use this type e.g. for
 your about page.&lt;/p>
-&lt;p>A page requires the meta-data &amp;lsquo;title&amp;rsquo; and &amp;lsquo;subtitle&amp;rsquo;.&lt;/p>
+&lt;p>A page requires the meta-data &amp;rsquo;title&amp;rsquo; and &amp;lsquo;subtitle&amp;rsquo;.&lt;/p>
 &lt;p>You can find an example page in &lt;code>test_data/_pages/page.md&lt;/code>.&lt;/p>
 &lt;h3 id="projects">Projects&lt;/h3>
 &lt;p>A project is a special HTML page supporting additional meta-data.&lt;/p>
-&lt;p>A project requires the meta-data &amp;lsquo;title&amp;rsquo;, &amp;lsquo;subtitle&amp;rsquo;, &amp;lsquo;tags&amp;rsquo; and &amp;lsquo;github&amp;rsquo;. The meta-data &amp;lsquo;tags&amp;rsquo; is
+&lt;p>A project requires the meta-data &amp;rsquo;title&amp;rsquo;, &amp;lsquo;subtitle&amp;rsquo;, &amp;rsquo;tags&amp;rsquo; and &amp;lsquo;github&amp;rsquo;. The meta-data &amp;rsquo;tags&amp;rsquo; is
 a space separated list of tags. The meta-data &amp;lsquo;github&amp;rsquo; is the Github URL to the project code.&lt;/p>
 &lt;p>You can find an example page in &lt;code>test_data/_projects/project.md&lt;/code>.&lt;/p>
 &lt;h3 id="articles">Articles&lt;/h3>
 &lt;p>An article is a &amp;lsquo;blog post&amp;rsquo;. This type of content is intended for getting displayed as lists showing
 the title and a brief abstract of the content.&lt;/p>
-&lt;p>An article requires the meta-data &amp;lsquo;title&amp;rsquo;, &amp;lsquo;category&amp;rsquo;, &amp;lsquo;tags&amp;rsquo; and &amp;lsquo;date&amp;rsquo;. The meta-data &amp;lsquo;tags&amp;rsquo; is
+&lt;p>An article requires the meta-data &amp;rsquo;title&amp;rsquo;, &amp;lsquo;category&amp;rsquo;, &amp;rsquo;tags&amp;rsquo; and &amp;lsquo;date&amp;rsquo;. The meta-data &amp;rsquo;tags&amp;rsquo; is
 a space separated list of tags. The meta-data &amp;lsquo;category&amp;rsquo; is a kind of primary tag and used to group
 articles. The meta-data &amp;lsquo;date&amp;rsquo; is intended as publish date of the article.&lt;/p>
 &lt;p>You can find an example page in &lt;code>test_data/_articles/article.md&lt;/code>.&lt;/p>
